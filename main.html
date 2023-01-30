@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="table_container">
+        <table id="mainTable" data-page="0">
+            <thead>
+            <tr>
+                <th class="firstName_th">Имя
+                    <button onclick="sortColumn(0)"><i class="fa fa-sort"></i></button>
+                </th>
+                <th class="lastName_th">Фамилия
+                    <button onclick="sortColumn(1)"><i class="fa fa-sort"></i></button>
+                </th>
+                <th class="about_th">Описание
+                    <button onclick="sortColumn(2)"><i class="fa fa-sort"></i></button>
+                </th>
+                <th class="eyeColor_th">Цвет глаз
+                    <button onclick="sortColumn(3)"><i class="fa fa-sort"></i></button>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+            <tfoot>
+            <tr>
+                <th colspan="2">Page: 0</th>
+                <th colspan="2">
+                    <button onclick="prevPage()">&#8249;</button>
+                    <button onclick="nextPage()">&#8250;</button>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div id="edit_container">
+        <div class="form_container">
+            <form>
+                <label>Имя:</label><br>
+                <input type="text" class="row_edit" name="firstName_input" value="John" required>
+                <br>
+                <label>Фамилия:</label><br>
+                <input type="text" class="row_edit" name="lastName_input" value="John" required>
+                <br>
+                <label>Описание:</label><br>
+                <textarea rows="4" class="row_edit" name="about_input" required></textarea>
+                <br>
+                <label>Цвет глаз:</label><br>
+                <input type="text" class="row_edit" name="eyeColor_input" value="John" required>
+                <br>
+                <div>
+                    <input type="button" value="Submit" onclick="saveChanges()">
+                    <input type="button" value="Cancel"
+                           onclick="document.getElementsByClassName('container')[0].style.width = '50%'; document.getElementById('edit_container').style.display = 'none';document.getElementsByClassName('table_container')[0].style.width = '100%';">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script src="src/js/main.js"></script>
+</html>
