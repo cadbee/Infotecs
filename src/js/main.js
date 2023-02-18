@@ -116,7 +116,7 @@ function nextPage() {
     table.tBodies[0].replaceWith(tbody);
     // Сохраняем номер страницы и отображаем его
     table.dataset.page = page.toString();
-    document.getElementById('mainTable').tFoot.children[0].children[0].innerText = "Page: " + page;
+    document.getElementById('mainTable').tFoot.children[0].children[0].innerText = "Page: " + (page + 1);
     // Добавляем возможность редактирования для новых строк
     document.querySelectorAll('#mainTable tbody tr').forEach(tableTH => tableTH.addEventListener('click', () => editRow(tableTH.rowIndex)));
 }
@@ -134,7 +134,7 @@ function prevPage() {
     table.tBodies[0].replaceWith(tbody);
     // Сохраняем новый номер страницы и отображаем его в таблице
     table.dataset.page = page.toString();
-    document.getElementById('mainTable').tFoot.children[0].children[0].innerText = "Page: " + page;
+    document.getElementById('mainTable').tFoot.children[0].children[0].innerText = "Page: " + (page + 1);
     // Добавляем возможность редактирования для строк
     document.querySelectorAll('#mainTable tbody tr').forEach(tableTH => tableTH.addEventListener('click', () => editRow(tableTH.rowIndex)));
 }
