@@ -1,5 +1,5 @@
 let req = new XMLHttpRequest();
-req.open("GET", "../json/users.json", false);
+req.open("GET", "/json/users.json", false);
 req.send(null);
 let data = JSON.parse(req.responseText); // Получаем информацию из данного json
 let rows = []; // Массив, в котором будут храниться все строки таблицы, необходим для сортировки по столбцам независимо от страницы
